@@ -13,7 +13,7 @@ module.exports = class EmberHandlebarsCompiler
     if @config.files.templates.precompile is on
       @precompile = on
     if @config.files.templates.root?
-      @root = sysPath.join 'app', @config.files.templates.root, sysPath.sep
+      @root = sysPath.join sysPath.join @config.files.templates.app_root || 'app', @config.files.templates.root, sysPath.sep
     if @config.modules.wrapper is off
       @modulesPrefix = ''
     if @config.files.templates.defaultExtension?
